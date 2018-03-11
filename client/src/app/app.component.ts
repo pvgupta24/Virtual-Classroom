@@ -6,6 +6,6 @@ import { AuthenticationService } from './authentication.service';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title:"Virtual Classroom"
+  title = 'Virtual Classroom';
   constructor(public auth: AuthenticationService) {}
 }
