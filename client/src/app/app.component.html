@@ -3,11 +3,13 @@
   <div class="container">
     <div id="navbar-main">
       <ul class="nav navbar-nav">
-        <li><a routerLink="/">{{title}}</a></li>
+        <li><a routerLink="{{auth.isLoggedIn() ? '/dashboard' : '/'}}">{{title}}</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Sign in</a></li>
+        <li *ngIf="!auth.isLoggedIn()"><a routerLink="/register">Register</a></li>
         <li *ngIf="auth.isLoggedIn()"><a routerLink="/profile">{{ auth.getUserDetails()?.name }}</a></li>
+        <li *ngIf="auth.isLoggedIn()"><a routerLink="/dashboard">Dashboard</a></li>
         <li *ngIf="auth.isLoggedIn()"><a (click)="auth.logout()">Logout</a></li>
       </ul>
     </div>

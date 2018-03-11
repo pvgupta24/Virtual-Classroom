@@ -13,7 +13,23 @@ var userSchema = new mongoose.Schema({
     required: true
   },
   hash: String,
-  salt: String
+  salt: String,
+  faculty:{
+    type: Boolean,
+    default: false
+  },
+  mob: String,
+  dob: Date,
+  education: String,
+  gender: {
+    type: String,
+    enum: ["male", "female"],
+    default: "male"
+  },
+  courses:{
+    type: [mongoose.Schema.Types.ObjectId],
+    default: []
+  }
 });
 
 userSchema.methods.setPassword = function(password){
@@ -35,7 +51,7 @@ userSchema.methods.generateJwt = function() {
     email: this.email,
     name: this.name,
     exp: parseInt(expiry.getTime() / 1000),
-  }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE!
+  }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE! change later
 };
 
 mongoose.model('User', userSchema);

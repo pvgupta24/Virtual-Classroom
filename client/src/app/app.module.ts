@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CourseComponent } from './course/course.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,

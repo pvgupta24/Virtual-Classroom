@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService, UserDetails } from '../authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
+  /*selector: 'app-dashboard',*/
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
-  name = "Praveen Gupta";
-  constructor() { }
+export class DashboardComponent {
+  user: UserDetails;
 
-  ngOnInit() {
+  constructor(private auth: AuthenticationService, private router: Router) {}
+  
+  ngOnInit() {    
+    this.auth.profile().subscribe(user => {
+      this.user = user;
+      //Log the user details
+      console.log(user);
+    }, (err) => {
+      console.error(err);
+    });
   }
-
+  newCourse() {
+      this.router.navigateByUrl('/newCourse');
+  }
 }

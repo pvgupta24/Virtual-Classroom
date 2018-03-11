@@ -12,6 +12,8 @@ export class ProfileComponent {
   ngOnInit() {    
     this.auth.profile().subscribe(user => {
       this.details = user;
+      //Log the user details
+      console.log(user);
     }, (err) => {
       console.error(err);
     });

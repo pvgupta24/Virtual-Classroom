@@ -1,6 +1,22 @@
 
+<div class="container">
+  <h1>    
+    {{user?.name | titlecase}}'s Dashboard 
+  </h1>
+
 <div>
-<p>Yooo
-  {{name}}
-</p>
+  <span *ngIf="user?.faculty" class="label label-primary">Faculty</span>
+  <span *ngIf="!user?.faculty" class="label label-success">Student</span>
+</div>
+<hr>
+<div *ngIf="user?.faculty">
+  <button type="button" class="btn btn-success">New Course</button>
+</div>
+
+<div class="container">
+  <div *ngFor="let course of users?.courses">
+        
+  </div>
+</div>
+
 </div>
