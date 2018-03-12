@@ -3,7 +3,7 @@
   <div class="container">
     <div id="navbar-main">
       <ul class="nav navbar-nav">
-        <li><a routerLink="{{auth.isLoggedIn() ? '/dashboard' : '/'}}">{{title}}</a></li>
+        <li><h1><a routerLink="{{auth.isLoggedIn() ? '/dashboard' : '/'}}">{{title}}</a></h1></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Sign in</a></li>
