@@ -1,7 +1,232 @@
+
+<style>
+  body {
+    font-size: 62.5%;
+    font-style: Arial;
+  }
+
+  .animation-box {
+    width: 100%;
+    height: 50rem;
+    background-color: rgb(100, 100, 100);
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+  }
+
+  .animation-container {
+    width: 1000rem;
+    height: 30rem;
+  }
+
+  @keyframes topFadeOut {
+    0% {
+      position: absolute;
+      top: -3rem;
+      opacity: 0;
+    }
+
+    75% {
+      position: absolute;
+      top: 25%;
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes bottomFadeOut {
+    0% {
+      position: absolute;
+      bottom: -5rem;
+      opacity: 0;
+    }
+
+    75% {
+      position: absolute;
+      bottom: 25%;
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+    
+  }
+
+  @keyframes topFadeOutVertical {
+    0% {
+      position: absolute;
+      top: -3rem;
+      opacity: 0;
+    }
+
+    75% {
+      position: absolute;
+      top: 45%;
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes rightFadeInOut {
+    0% {
+      position: absolute;
+      right: -3rem;
+      opacity: 0;
+    }
+
+    75% {
+      position: absolute;
+      right: 10rem;
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      right: 10rem;
+    }
+  }
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+
+    45% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0%;
+    }
+  }
+
+  .first-text {
+    font-size: 4.4rem;
+    position: absolute;
+    left: 2.5rem;
+    top: 5rem;
+    opacity: 0;
+    animation-name: topFadeOut;
+    animation-duration: 5s;
+    color: white;
+  }
+
+  .second-text {
+    font-size: 3.4rem;
+    position: absolute;
+    top: 8.5rem;
+    opacity: 0;
+    animation-name: rightFadeInOut;
+    animation-delay: 3s;
+    animation-duration: 6s;
+    color: white;
+  }
+
+  .third-text {
+    transform: rotate(-90deg);
+    font-size: 2rem;
+    position: absolute;
+    left: 45%;
+    top: 45%;
+    opacity: 0;
+    animation-name: topFadeOutVertical;
+    animation-delay: 7.5s;
+    animation-duration: 6s;
+    color: white;
+    white-space: nowrap;
+  }
+
+  .fourth-text {
+    font-size: 3.4rem;
+    position: absolute;
+    top: 10.5rem;
+    left: 10%;
+    opacity: 0;
+    color: white;
+    animation-name: fadeInOut;
+    animation-delay: 8.5s;
+    animation-duration: 9s;
+  }
+
+  .fifth-text {
+    font-size: 5rem;
+    position: absolute;
+    left: 5%;
+    bottom: 25%;
+    opacity: 0;
+    color: white;
+    animation-name: bottomFadeOut;
+    animation-delay: 10s;
+    animation-duration: 9s;
+  }
+</style>  
+
+
 <div class="container">
 
   <div class="row">
-    <div class="col-md-6">
+
+      <div class="col-sm-8 col-sm-pull-2">
+
+          <section class="animation-box">
+              <div class="first-text">Welcome to the virtual classroom</div>
+              <div class="second-text">Watch Live Video Lectures from anywhere</div>
+              <div class="third-text">Discussion forums</div>
+              <div class="fourth-text">Up-to-date Course Materials</div>
+              <div class="fifth-text">Have fun learning!</div>
+            </section>
+
+        <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+         
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+      
+          
+          <div class="carousel-inner">
+                
+            <div class="item active">
+              <img class="d-block" src="../../assets/images/school.jpg" alt="Classroom" style="width:100%;">
+            </div>
+            
+            <div class="item">
+              <img class="d-block" src="../../assets/images/math.jpg" alt="Math equations" style="width:100%;">
+            </div>
+      
+            <div class="item">
+              <img class="d-block" src="../../assets/images/book.jpeg" alt="Greenboard and book" style="width:100%;">
+            </div>
+      
+            <div class="item">
+                <img class="d-block" src="../../assets/images/chem.jpg" alt="Chemistry periodic table" style="width:100%;">
+            </div>
+            
+          </div> 
+      
+          
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div> -->
+      </div> 
+
+    <div class="col-md-4 col-md-push-1">
       <h1>Register</h1>
       <p class="lead">Already a member? Please <a routerLink="/login">log in</a> instead.</p>
       <form (submit)="register()">
@@ -29,5 +254,8 @@
       </form>
     </div>
   </div>
+
+  
+  
 
 </div>
