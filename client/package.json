@@ -1,10 +1,10 @@
 {
   "name": "virtual-classroom",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json --open",
+    "start": "ng serve --proxy-config proxy.conf.json --open --host=0.0.0.0",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

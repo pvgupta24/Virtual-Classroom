@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
 //let jitsi = require('https://meet.jit.si/external_api.js');
-//declare function JitsiMeetExternalAPI(a:string,b): any;
+declare function JitsiMeetExternalAPI(a,b): void;
 
 @Component({
   // selector: 'app-course',
@@ -16,5 +16,17 @@ export class CourseComponent implements OnInit {
     console.log("Course is "+ this.courseCode);
   }
   ngOnInit() {
+  }
+  startSession(){
+    console.log("Connecting to live class ");
+    var domain = "meet.jit.si";
+    var options = {
+        roomName: "VirtualClassroom-"+this.courseCode,// +"somerandom",
+        width: 700,
+        height: 600,
+        parentNode: document.querySelector('#meet')
+    }
+    var api = new JitsiMeetExternalAPI(domain, options);
+    
   }
 }
