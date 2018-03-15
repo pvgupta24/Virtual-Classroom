@@ -11,24 +11,32 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 export class DashboardComponent {
   user: UserDetails;
   constructor(private auth: AuthenticationService, private router: Router, private http: HttpClient) {}
-  
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
   ngOnInit() {    
     this.auth.profile().subscribe(user => {
       this.user = user;
       //Log the user details
-      console.log(user);
+      console.log(user.courses);
+      //Load MyCourses
+      for (var course in user.courses){
+        console.log("Requesting "+ user.courses[course]);
+        this.http.get('/api/courseDetails/'+ user.courses[course] ,this.httpOptions)
+        .subscribe(res => console.log(res));
+      }
     }, (err) => {
       console.error(err);
     });
+
+    
   }
   
-  newCourse() {
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
+  newCourse() {    
     this.http.post('/api/newCourse',
-    JSON.stringify({"name":"Hmmm", "code":"IT110"}),httpOptions)
+    JSON.stringify({"name":"Hmmm", "code":"IT110"}), this.httpOptions)
     .subscribe(res => console.log(res));
     // this.router.navigateByUrl('/newCourse');
   }
+
 }

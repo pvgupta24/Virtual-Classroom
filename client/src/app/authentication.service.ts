@@ -9,6 +9,7 @@ export interface UserDetails {
   email: string;
   name: string;
   faculty: boolean;
+  courses: [string]
   exp: number;
   iat: number;
 }

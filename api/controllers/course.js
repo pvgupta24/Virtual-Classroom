@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 var Course = mongoose.model('Course');
 
 module.exports.register = function(req, res) {
-
   var course = new Course();
   course.name = req.body.name;
   course.code = req.body.code;
@@ -16,7 +15,11 @@ module.exports.register = function(req, res) {
 
 };
 
-module.exports.myCourses = function(req,res){
-  console.log(req.body);
-  // course.find();
+module.exports.courseDetails = function(req,res){
+  console.log("Searching and sending "+req.params.course);
+  course.findById(mongoose.Types.ObjectId(req.params.course),function(err,data){
+    console.log(res);
+    if(err) console.log(err)
+    res.json(data)
+  });
 }
