@@ -15,3 +15,8 @@ module.exports.register = function(req, res) {
   });
 
 };
+
+module.exports.myCourses = function(req,res){
+  console.log(req.body);
+  // course.find();
+}

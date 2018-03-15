@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, UserDetails } from '../authentication.service';
 import { Router } from '@angular/router';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 @Component({
   /*selector: 'app-dashboard',*/
@@ -9,8 +10,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent {
   user: UserDetails;
-
-  constructor(private auth: AuthenticationService, private router: Router) {}
+  constructor(private auth: AuthenticationService, private router: Router, private http: HttpClient) {}
   
   ngOnInit() {    
     this.auth.profile().subscribe(user => {
@@ -21,7 +21,14 @@ export class DashboardComponent {
       console.error(err);
     });
   }
+  
   newCourse() {
-      this.router.navigateByUrl('/newCourse');
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    this.http.post('/api/newCourse',
+    JSON.stringify({"name":"Hmmm", "code":"IT110"}),httpOptions)
+    .subscribe(res => console.log(res));
+    // this.router.navigateByUrl('/newCourse');
   }
 }

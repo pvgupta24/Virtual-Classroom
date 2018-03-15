@@ -14,7 +14,11 @@ var courseSchema = new mongoose.Schema({
     users:{
         type: [mongoose.Schema.Types.ObjectId],
         default: []
-    }
+    },
+    forums:[{
+                sender: mongoose.Schema.Types.ObjectId,
+                msg : String
+            }]
 });
     
 mongoose.model('Course', courseSchema);

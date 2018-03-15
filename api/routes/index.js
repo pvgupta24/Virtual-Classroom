@@ -22,4 +22,8 @@ router.post('/login', ctrlAuth.login);
 //new course
 router.post('/newCourse',ctrlCourse.register);
 
+//retrieve user's courses
+router.post('/myCourses',ctrlCourse.myCourses)
+
+
 module.exports = router;

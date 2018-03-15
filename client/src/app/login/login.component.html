@@ -1,25 +1,90 @@
-<div class="container">
 
-  <div class="row">
-    
-    <div class="col-md-4 col-md-push-4">
 
-      <h1 class="form-signin-heading">Sign in</h1>
-      <p class="lead">Not a member? Please <a routerLink="/register">register</a> instead.</p>
-  
-      <form (submit)="login()">
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email">
+<!-- Full Page Intro -->
+<div class="view full-page-intro" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+  <!-- Mask & flexbox options-->
+  <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+    <!-- Content -->
+    <div class="container">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4 white-text text-center text-md-left">
+          <h1 class="display-4 font-weight-bold">Learn Bootstrap 4 with MDB</h1>
+          <hr class="hr-light">
+
+          <p>
+            <strong>Best & free guide of responsive web design</strong>
+          </p>
+
+          <p class="mb-4 d-none d-md-block">
+            <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions
+              available. Create your own, stunning website.</strong>
+          </p>
+
+          <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-indigo btn-lg">Start free tutorial
+            <i class="fa fa-graduation-cap ml-2"></i>
+          </a>
+
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password">
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 col-xl-5 mb-4">
+
+          <!--Card-->
+          <div class="card">
+
+            <!--Card content-->
+            <div class="card-body">
+
+              <!-- Form -->
+              <form name="" (submit)="login()">
+                <!-- Heading -->
+                <h3 class="dark-grey-text text-center">
+                  <strong>Sign in</strong>
+                </h3>
+                <hr>
+                <div class="md-form">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" name="email"  [(ngModel)]="credentials.email">
+                  </div>
+                <div class="md-form">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" name="password" [(ngModel)]="credentials.password">
+                </div>               
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Sign in!</button>
+                  <hr>
+                <p class="lead">Not a member? <a routerLink="/register">Register</a> instead.</p>
+                </div>
+
+              </form>
+              <!-- Form -->
+
+            </div>
+
+          </div>
+          <!--/.Card-->
+
         </div>
-        <button type="submit" class="btn btn-primary">Sign in!</button>
-      </form>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
 
     </div>
+    <!-- Content -->
+
   </div>
+  <!-- Mask & flexbox options-->
 
 </div>
+<!-- Full Page Intro -->
+
