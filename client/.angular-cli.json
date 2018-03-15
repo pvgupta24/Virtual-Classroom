@@ -19,11 +19,24 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../node_modules/bootstrap/dist/css/bootstrap-theme.min.css",
-        "styles.css"
+        "styles.css",
+        "assets/css/bootstrap.min.css",
+        "assets/css/mdb.min.css",
+        "assets/css/style.min.css"
       ],
-      "scripts": [],
+      "_comment":[
+         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/bootstrap/dist/css/bootstrap-theme.min.css",
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/materialize-css/dist/js/materialize.js",
+        "../node_modules/materialize-css/dist/css/materialize.css"
+      ],
+      "scripts": [       
+        "assets/js/bootstrap.min.js",
+        "assets/js/jquery-3.2.1.min.js",
+        "assets/js/mdb.min.js",
+        "assets/js/popper.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
