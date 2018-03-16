@@ -1,117 +1,147 @@
-<div class="my-view container">
-  <!--Main Navigation-->
-  <header>
-  <!-- 
-    <div class"container my-view">
+<!-- <div class="view full-page-intro" style="background-image: url('http://backgroundcheckall.com/wp-content/uploads/2017/12/background-dark-blue-vintage.jpg'); background-repeat: no-repeat; background-size: cover;"> --> -->
 
-    </div> -->
-    
-    <!-- Sidebar -->
-    <div class="side-nav sidebar-fixed position-fixed">      
+    <div class="my-view container">
+    <!--Main Navigation-->
+    <header>
+    <!-- 
+        <div class"container my-view">
 
-        <div class="list-group list-group-flush">
-          
-            <a href="#" class="list-group-item waves-effect">
-                <i class="fa fa-pie-chart mr-3"></i>Virtual Classroom
-            </a>
-            <a href="#" class="list-group-item waves-effect">
-                <i class="fa fa-pie-chart mr-3"></i>Dashboard
-            </a>
-            <a href="#" class="list-group-item list-group-item-action waves-effect">
-                <i class="fa fa-user mr-3"></i>Find new courses</a>
-            <a href="#" class="list-group-item list-group-item-action waves-effect active">
-                <i class="fa fa-table mr-3"></i>Profile</a>
-        </div>
+        </div> -->
+        
+        <!-- Sidebar -->
+        <div class="side-nav sidebar-fixed position-fixed">      
 
-    </div>
-    <!-- Sidebar -->
-
-  </header>
-  <!--Main Navigation-->
-
-<!--Main layout-->
-<main class="pt-5 mx-lg-5">
-    <div class="container-fluid mt-5">
-
-        <!-- Heading -->
-        <div class="card mb-4 wow fadeIn">
-
-            <!--Card content-->
-            <div class="card-body d-sm-flex justify-content-between">
-                <h4 class="mb-2 mb-sm-0 pt-1"> Your Profile</h4>
+            <div class="list-group list-group-flush">
+            
+                <a href="#" class="list-group-item waves-effect">
+                    <i class="fa fa-pie-chart mr-3"></i>Virtual Classroom
+                </a>
+                <a routerLink="/dashboard" class="list-group-item waves-effect">
+                    <i class="fa fa-pie-chart mr-3"></i>Dashboard
+                </a>
+                <a href="#" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-user mr-3"></i>Find new courses</a>
+                <a routerLink="/profile" class="list-group-item list-group-item-action waves-effect active">
+                    <i class="fa fa-table mr-3"></i>Profile</a>
             </div>
 
         </div>
-        <!-- Heading -->
+        <!-- Sidebar -->
 
-        <!--Grid row-->
-        <div class="row wow fadeIn">
+    </header>
+    <!--Main Navigation-->
 
-            <!--Grid column-->
-            <div class="col">
-                <div class="card">
-                    <div  class="m-4 p-2 border border-primary rounded bg-light">
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+    <!--Main layout-->
+    <main class="pt-5 mx-lg-5">
+        <div class="container-fluid">
+
+            <!-- Heading -->
+            <div class="card mb-4 wow fadeIn">
+
+                <!--Card content-->
+                <div class="card-body d-sm-flex justify-content-between">
+                    <h4 class="mb-2 mb-sm-0 pt-1"> Your Profile</h4>
+                </div>
+
+            </div>
+            <!-- Heading -->
+
+            <!--Grid row-->
+            <div class="row wow fadeIn">
+
+                <!--Grid column-->
+                <div class="col">
+                    <div class="card">
+                        <div  class="m-4 p-2 border border-primary rounded bg-light">
+                            <div class="col-md-9 col-md-offset-3 toppad" >
 
 
-                            <div class="panel panel-info">
-                                <div class="panel-heading">
-                                <h3 class="panel-title">Raju</h3>
-                                </div>
-                                <div class="panel-body">
-                                  <div class="row">
-                                      <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="" class="img-circle img-responsive"> </div>
-                                      
-                                      <div class=" col-md-9 col-lg-9 "> 
-                                        <table class="table table-user-information">
-                                            <tbody>
-                                              <tr>
-                                                  <td>Age:</td>
-                                                  <td>20</td>
-                                              </tr>
-                                              <!-- <tr>
-                                                  <td>Gender:</td>
-                                                  <td>Male</td>
-                                              </tr>
-                                              <tr>
-                                                  <td>Education:</td>
-                                                  <td>12th</td>
-                                              </tr>
-                                              
-                                              <tr>
-                                                  <td>Phone number:</td>
-                                                  <td>8989808980</td>
-                                              </tr>
-                                              <tr>
-                                                  <td>Home Address</td>
-                                                  <td>NITK, Surathkal</td>
-                                              </tr>
-                                              <tr>
-                                                  <td>Email</td>
-                                                  <td>info@support.com</td>
-                                              </tr>
-                                                                                         -->
-                                            </tbody>
-                                      </table>
-                                  
-                                      </div>
-                                  </div>  
-                                <div class="m-4">  
-                                    <button type="button" class="btn btn-primary"> Edit</button>
-                                </div>
-                                </div>
-                            </div>                      
+                                <div class="panel panel-info">
+                                    <div class="panel-heading m-5">
+                                    <h1 class="panel-title">{{ details?.name | titlecase }}</h1>
+                                    </div>
+                                    <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-5 col-lg-5 w-25 ml-5 h-25" align="center"> <img alt="User Pic" src="../../assets/images/default_profile.png" class="img-circle img-responsive"> </div>
+                                        
+                                        <div *ngIf="!editNow" class=" col-md-9 col-lg-9 ml-5 mt-5"> 
+                                            <table class="table table-user-information">
+                                                <tbody>
+                                                <tr>
+                                                    <td>Date of Birth: </td>
+                                                    <td>{{ details?.dob }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gender: </td>
+                                                    <td>{{ details?.gender }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Education: </td>
+                                                    <td>{{ details?.education }}</td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td>Phone number:</td>
+                                                    <td>{{ details?.mob }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email: </td>
+                                                    <td>{{ details?.email }}</td>
+                                                </tr>
+                                                                                            
+                                                </tbody>
+                                        </table>
+                                    
+                                        </div>
+
+                                        <div *ngIf="editNow" class="col-md-9 col-lg-9 ml-5 mt-5"> 
+                                            <table class="table table-user-information">
+                                                <tbody>
+                                                <tr>
+                                                    <td>Date of Birth: </td>
+                                                    <td><input class="form-control" type="text" placeholder="Date of Birth"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gender: </td>
+                                                    <td><input class="form-control" type="text" placeholder="Gender"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Education: </td>
+                                                    <td><input class="form-control" type="text" placeholder="Education"></td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td>Phone number:</td>
+                                                    <td><input class="form-control" type="text" placeholder="Phone number"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email: </td>
+                                                    <td><input class="form-control" type="text" placeholder="E-mail address"></td>
+                                                </tr>
+                                                                                            
+                                                </tbody>
+                                        </table>
+                                    
+                                        </div>
+
+                                    </div>  
+                                    <div class="m-4">  
+                                        <button type="button" class="btn btn-primary" (click)="editNow=!editNow"> {{editNow?'Back':'Edit'}}</button>
+                                        <button type="button" *ngIf="editNow" class="btn btn-primary"> Update</button>
+                                    </div>
+                                    </div>
+                                </div>                      
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div> 
-        </div>   
-      </div>     
-</main>
+                </div> 
+            </div>   
+        </div>     
+    </main>
 <!--Main layout-->
+</div>
 
-
- 
+ <!-- </div> -->
 
 <!-- 
 
