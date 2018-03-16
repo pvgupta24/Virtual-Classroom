@@ -1,16 +1,16 @@
 
 <!-- Navbar -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-
-    <!-- Brand -->
+  <!-- Brand -->
     <a class="navbar-brand" routerLink="{{auth.isLoggedIn() ? '/dashboard' : '/'}}">
       <!-- <a class="navbar-brand" href="#">
           <img src="assets/images/icon.png" height="80" >
      </a>  -->
      <i class="fa fa-graduation-cap"></i>
       <strong>{{title}}</strong>
-    </a>
+    </a><div class="container">
+
+    
 
     <!-- Collapse -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -27,7 +27,7 @@
       </ul>
 
       <!-- Right -->
-      <ul class="navbar-nav nav-flex-icons"> <li class="nav-item active">
+      <ul class="navbar-nav nav-flex-icons"> <li class="nav-item">
           <a class="nav-link" href="#">Home
             <span class="sr-only">(current)</span>
           </a>
@@ -39,9 +39,8 @@
           <li *ngIf="auth.isLoggedIn()" class="nav-item"><a class="nav-link" (click)="auth.logout()">Logout</a></li>
        
         <li class="nav-item">
-          <a href="https://github.com/pvgupta24/Virtual-Classroom" class="nav-link border border-light rounded" target="_blank">
-            <i class="fa fa-github mr-2"></i>Contribute on GitHub
-          </a>
+          <a href="https://github.com/pvgupta24/Virtual-Classroom" class="nav-link" target="_blank">
+            <i class="fa fa-github mr-2"></i> </a>
         </li>
       </ul>
 

@@ -30,8 +30,11 @@
   padding:0;
   margin:0;
 }
-.navbar {
-  height: 6<a class="navbar-brand" href="#">
-  <img src="assets/images/icon.png" height="80" >
-</a> 0px;
+/* .navbar {
+  height: 60px;
+} */
+
+.scroll-box {
+  overflow-y: scroll;
+  padding: 1rem
 }
