@@ -1,5 +1,7 @@
+<!-- Full Page Intro -->
+<div class="view full-page-intro" style="background-image: url('https://images.pexels.com/photos/745365/pexels-photo-745365.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb'); background-repeat: no-repeat; background-size: cover;">
 
-<div class="my-view container">
+<div class="my-view container" >
     <!--Main Navigation-->
     <header>
     <!-- 
@@ -20,9 +22,39 @@
                   <i class="fa fa-table mr-3"></i>Find new courses</a>
               <a routerLink="/profile" href="#" class="list-group-item list-group-item-action waves-effect">
                   <i class="fa fa-user mr-3"></i>Profile</a>
-                <a *ngIf="user?.faculty" (click)="newCourse()">
+                <a *ngIf="user?.faculty" data-toggle="modal" data-target="#exampleModal">
                     <button type="button" class="btn btn-success" >New Course</button>
                 </a>
+                <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add new course</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="md-form mb-5">
+                                <i class="fa fa-user prefix grey-text"></i>
+                                <input type="text" id="form34" class="form-control" [(ngModel)]="newcourse.code">
+                                <label data-error="wrong" data-success="right" for="form34">Course Code</label>
+                            </div>
+                            <div class="md-form mb-5">
+                                <i class="fa fa-user prefix grey-text"></i>
+                                <input type="text" id="form34" class="form-control" [(ngModel)]="newcourse.name">
+                                <label data-error="wrong" data-success="right" for="form34">Course Name</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button class="btn btn-unique" (click)="newCourse()">Add course 
+                                <i class="fa fa-paper-plane-o ml-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
   
       </div>
@@ -52,25 +84,16 @@
             <div *ngFor = "let course of courses" class="wow fadeIn">
                 <a routerLink="{{'/course/'+course.code}}">
                 <!--Card-->
-                <div class="card mb-4" >
-                
-                    <!--Card image-->
-                    <div class="view overlay">
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg">
-                        <!-- <a href="">
-                            <div class="mask rgba-white-slight"></div>
-                        </a> -->
-                    </div>
-                    <!--Card image-->
+                <div class="card mb-4" >                    
 
                     <!--Card content-->
                     <div class="card-body">
 
                         <!--Title-->
-                        <h4 class="card-title">{{course.code}}</h4>
+                        <h4 class="card-title">{{course.code}} - {{course.name}}</h4>
 
                         <!--Text-->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Course Description</p>
 
                         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                         <button type="button" class="btn btn-light-blue btn-md">Go to Course Page</button>
@@ -97,7 +120,7 @@
     <!--Main layout-->
 
   </div>
-
+</div>
 
 
 

@@ -1,6 +1,6 @@
 
 <!-- Full Page Intro -->
-<div class="view full-page-intro" style="background-image: url('https://media.giphy.com/media/26FlsXbeMANdBgjy8/giphy.gif'); background-repeat: no-repeat; background-size: cover;">
+<div class="view full-page-intro" style="background-image: url('http://cdn.makezine.com/uploads/2012/08/edisons-cradle1.gif'); background-repeat: no-repeat; background-size: cover;">
 
   <!-- Mask & flexbox options-->
   <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -13,19 +13,20 @@
 
         <!--Grid column-->
         <div class="col-md-6 mb-4 white-text text-center text-md-left">
-          <h1 class="display-4 font-weight-bold">Learn Bootstrap 4 with MDB</h1>
+          <h1 class="display-5 font-weight-bold">We are happy you are here</h1>
           <hr class="hr-light">
 
           <p>
-            <strong>Best & free guide of responsive web design</strong>
+            <strong>Experience classes like never before</strong>
           </p>
 
           <p class="mb-4 d-none d-md-block">
-            <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions
-              available. Create your own, stunning website.</strong>
+            <strong>Connect to your peers, learn with others in real time, discuss problems
+              and much more.
+            </strong>
           </p>
 
-          <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-indigo btn-lg">Start free tutorial
+          <a routerLink="/login" class="btn btn-indigo btn-lg">Existing Member
             <i class="fa fa-graduation-cap ml-2"></i>
           </a>
 
@@ -55,7 +56,6 @@
                       <input type="text" class="form-control" name="name" [(ngModel)]="credentials.name">
                     </div>
                     <div class="md-form">
-                    <i class="fa fa-envelope prefix grey-text"></i>
                       <label for="email">Email address</label>
                       <input type="email" class="form-control" name="email" [(ngModel)]="credentials.email">
                     </div>
