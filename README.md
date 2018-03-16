@@ -1,3 +1,7 @@
+# Virtual Classroom
+
+## Description
+This is a web application which provides a platform for students to access educational resources from anywhere. This application also allows faculty to create new courses, conduct live lectures, interact with students in discussion forums and create course materials. Students get access to these live lectures, discussion forums and course materials.
 
 ## Dependencies
 * MongoDB
@@ -15,3 +19,7 @@ sudo sysctl fs.inotify.max_user_watches=524288
 sudo sysctl -p --system
 ```
 * Open http://localhost:4200 to see the application
+
+## Contributors
+* Praveen Kumar Gupta
+* Shashank P
