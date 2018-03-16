@@ -6,6 +6,7 @@ import { AuthenticationService, UserDetails } from '../authentication.service';
 })
 export class ProfileComponent {
   details: UserDetails;
+  editNow: Boolean = false
 
   constructor(private auth: AuthenticationService) {}
   
