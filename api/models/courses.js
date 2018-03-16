@@ -21,4 +21,4 @@ var courseSchema = new mongoose.Schema({
             }]
 });
     
-mongoose.model('Course', courseSchema);
+mongoose.model('Course', courseSchema,'courses');

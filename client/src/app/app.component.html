@@ -4,7 +4,11 @@
   <div class="container">
 
     <!-- Brand -->
-    <a class="navbar-brand" routerLink="{{auth.isLoggedIn() ? '/dashboard' : '/'}}"><strong>{{title}}</strong>
+    <a class="navbar-brand" routerLink="{{auth.isLoggedIn() ? '/dashboard' : '/'}}">
+      <a class="navbar-brand" href="#">
+          <!-- <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt="">
+      --></a> 
+      <strong>{{title}}</strong>
     </a>
 
     <!-- Collapse -->

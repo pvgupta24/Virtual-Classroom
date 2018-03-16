@@ -18,4 +18,6 @@ export class ProfileComponent {
       console.error(err);
     });
   }
+  fields = []
+  values = []
 }

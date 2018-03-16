@@ -1,4 +1,115 @@
 
+<div class="my-view container">
+    <!--Main Navigation-->
+    <header>
+    <!-- 
+      <div class"container my-view">
+  
+      </div> -->
+      
+      <!-- Sidebar -->
+      <div class="side-nav sidebar-fixed position-fixed">      
+  
+          <div class="list-group list-group-flush">
+            
+              <a href="#" class="list-group-item waves-effect">
+                  <i class="fa fa-pie-chart mr-3"></i>Virtual Classroom
+              </a>
+              <a href="#" class="list-group-item waves-effect">
+                  <i class="fa fa-pie-chart mr-3"></i>Dashboard
+              </a>
+              <a href="#" class="list-group-item list-group-item-action waves-effect">
+                  <i class="fa fa-user mr-3"></i>Find new courses</a>
+              <a href="#" class="list-group-item list-group-item-action waves-effect active">
+                  <i class="fa fa-table mr-3"></i>Profile</a>
+          </div>
+  
+      </div>
+      <!-- Sidebar -->
+  
+    </header>
+    <!--Main Navigation-->
+  
+<!--Main layout-->
+          <main class="mx-lg-5">
+              <div class="container-fluid mt-5">
+
+                  <!-- Heading -->
+                  <div class="card mb-4 wow fadeIn">
+
+                      <!--Card content-->
+                      <div class="card-body d-sm-flex justify-content-between">
+                          <h4 class="mb-2 mb-sm-0 pt-1"> Your Courses</h4>
+                      </div>
+
+                  </div>
+                  <!-- Heading -->
+
+
+                  <!--Card group-->
+                <div class="card-deck">
+                    <div *ngFor = "let course of courses">
+                      <a routerLink="{{'/course/'+course.code}}">
+                        <!--Card-->
+                    <div class="card mb-4" *ngFor = "let course of courses">
+                        <a routerLink="{{'/course/'+course.code}}">
+  
+                        </a>
+                          <!--Card image-->
+                          <div class="view overlay">
+                              <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg" alt="Card image cap">
+                              <a href="#!">
+                                  <div class="mask rgba-white-slight"></div>
+                              </a>
+                          </div>
+                          <!--Card image-->
+  
+                          <!--Card content-->
+                          <div class="card-body">
+  
+                              <!--Title-->
+                              <h4 class="card-title">{{course.code}}</h4>
+  
+                              <!--Text-->
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  
+                              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                              <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+                          </div>
+                          <!--Card content-->
+  
+                      </div>
+                      <!--Card-->
+                      </a>
+                    </div>
+                    
+
+                </div>
+                <!--Card group-->
+
+
+                  <!--Grid row-->
+                  <div class="row wow fadeIn">
+                  </div>
+                  <!--Grid row-->
+
+              </div>
+          </main>
+          <!--Main layout-->
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container">
   <h1>    
     {{user?.name | titlecase}}'s Dashboard 

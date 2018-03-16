@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* Application-wide Styles */
-h1 {
+/* h1 {
     color: #369;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 250%;
@@ -13,13 +13,16 @@ h1 {
   /*
   body {
     margin: 2em;
-  }*/
+  }
   
   body, input[text], button {
     color: #888;
     font-family: Cambria, Georgia;
   }
-  /* everywhere else */
-  * {
+  /* everywhere else 
+   {
     font-family: Arial, Helvetica, sans-serif;
-  }
+} */
+.my-view {
+  margin-top: 100px;
+} 

@@ -10,6 +10,9 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 })
 export class DashboardComponent {
   user: UserDetails;
+  courses : Object[] = []
+  keys = [1,2,3];
+
   constructor(private auth: AuthenticationService, private router: Router, private http: HttpClient) {}
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -23,18 +26,17 @@ export class DashboardComponent {
       for (var course in user.courses){
         console.log("Requesting "+ user.courses[course]);
         this.http.get('/api/courseDetails/'+ user.courses[course] ,this.httpOptions)
-        .subscribe(res => console.log(res));
+        .subscribe(res => this.courses.push(res));
       }
+    console.log(this.courses)
     }, (err) => {
       console.error(err);
     });
-
     
   }
-  
   newCourse() {    
     this.http.post('/api/newCourse',
-    JSON.stringify({"name":"Hmmm", "code":"IT110"}), this.httpOptions)
+    JSON.stringify({"name":"First", "code":"yoyo"}), this.httpOptions)
     .subscribe(res => console.log(res));
     // this.router.navigateByUrl('/newCourse');
   }
