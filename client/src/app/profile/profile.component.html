@@ -14,15 +14,13 @@
             <div class="list-group list-group-flush">
             
                 <a href="#" class="list-group-item waves-effect">
-                    <i class="fa fa-pie-chart mr-3"></i>Virtual Classroom
-                </a>
-                <a routerLink="/dashboard" class="list-group-item waves-effect">
-                    <i class="fa fa-pie-chart mr-3"></i>Dashboard
-                </a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fa fa-user mr-3"></i>Find new courses</a>
-                <a routerLink="/profile" class="list-group-item list-group-item-action waves-effect active">
-                    <i class="fa fa-table mr-3"></i>Profile</a>
+                    <h3>Virtual Classroom</h3></a>              
+                <a routerLink="/dashboard" class="list-group-item waves-effect active">
+                    <i class="fa fa-pie-chart mr-3"></i>Dashboard</a>              
+                <a *ngIf="user?.faculty==false" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-table mr-3"></i>Find new courses</a>
+                <a routerLink="/profile" href="#" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-user mr-3"></i>Profile</a>
             </div>
 
         </div>

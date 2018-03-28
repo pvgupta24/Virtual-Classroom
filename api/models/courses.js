@@ -10,9 +10,14 @@ var courseSchema = new mongoose.Schema({
         type: String,
         unique: true
     },
-    owner:mongoose.Schema.Types.ObjectId,
+    //owner:mongoose.Schema.Types.ObjectId,
+    owner:{
+        type: String,
+        required: true
+    },
     users:{
-        type: [mongoose.Schema.Types.ObjectId],
+        //type: [mongoose.Schema.Types.ObjectId],
+        type:[String],
         default: []
     },
     forums:[{

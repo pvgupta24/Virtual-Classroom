@@ -28,17 +28,22 @@ export class DashboardComponent {
       console.log(user.courses);
       //Load MyCourses
       for (var course in user.courses){
+
         console.log("Requesting "+ user.courses[course]);
         this.http.get('/api/courseDetails/'+ user.courses[course] ,this.httpOptions)
-        .subscribe(res => {this.courses.push(res);});
+        .subscribe(res => {
+          console.log(res);
+          this.courses.push(res);
+        });
       }
-      this.newcourse.owner = user._id;
+      this.newcourse.owner = user.email;
     }, (err) => {
       console.error(err);
     });
     
   }
   newCourse() {    
+    console.log("New course is being created");
     this.http.post('/api/newCourse',
     JSON.stringify({"name":this.newcourse.name,
      "code":this.newcourse.code,

@@ -17,7 +17,7 @@ module.exports.register = function(req, res) {
   // }
 
   var user = new User();
-
+  console.log("Registering " + JSON.stringify(req.body));
   user.name = req.body.name;
   user.email = req.body.email;
   user.faculty = req.body.faculty;
@@ -59,10 +59,36 @@ module.exports.login = function(req, res) {
       res.json({
         "token" : token
       });
+      console.log("Logged in");
+    } else {
+      // If user is not found
+      res.status(401).json(info);
+    }
+  })(req, res);www
+
+};
+
+
+module.exports.forgotPassword = function(req, res) {
+
+ /* TODO :
+  Retreive Email id
+  Use User.find to check if user exists
+  if yes send else send back error
+ */
+  console.log("Searching for "+req.body.email);
+  User.findOne({ email: req.body.email }, function (err, user) {
+    if (err) { return done(err); }
+    // If user is found in database
+    if(user){
+      res.status(200);
+      res.json({
+        "email" : req.body.email
+      });
     } else {
       // If user is not found
       res.status(401).json(info);
     }
   })(req, res);
-
+ 
 };
