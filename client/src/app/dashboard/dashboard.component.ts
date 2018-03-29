@@ -8,6 +8,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent {
   user: UserDetails;
   courses : Object[] = []

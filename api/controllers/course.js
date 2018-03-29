@@ -9,8 +9,13 @@ module.exports.register = function(req, res) {
   course.users.push(req.body.owner);//owner also a user, add to user table also ...
 
   course.save(function(err) {
-    console.log("Error..\n"+err);
-    res.status(200);
+	if(err){
+	   console.log("Error..\n"+err);
+    	   res.status(200);
+	}
+	else{
+	
+	}
   });
 
 };
