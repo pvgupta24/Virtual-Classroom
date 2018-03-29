@@ -27,7 +27,7 @@ var userSchema = new mongoose.Schema({
     default: "male"
   },
   courses:{
-    type: [mongoose.Schema.Types.ObjectId],
+    type: [String],
     default: []
   }
 });
@@ -54,4 +54,6 @@ userSchema.methods.generateJwt = function() {
   }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE! change later
 };
 
+// mongoose.model('Course', courseSchema,'courses');
+// 
 mongoose.model('User', userSchema);

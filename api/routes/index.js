@@ -19,11 +19,16 @@ router.get('/profile', auth, ctrlProfile.profileRead);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
+//edit profile
+router.post('/editProfile',ctrlProfile.editProfile);
+
 //new course
-router.post('/newCourse',ctrlCourse.register);
+router.post('/newCourse',ctrlCourse.newCourse);
 
 //retrieve user's courses
 router.get('/courseDetails/:course',ctrlCourse.courseDetails)
 
+//Forgot Password
+router.post('/forgotPassword', ctrlAuth.forgotPassword);
 
 module.exports = router;

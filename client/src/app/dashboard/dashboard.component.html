@@ -14,19 +14,19 @@
   
           <div class="list-group list-group-flush">
             
-              <a href="#" class="list-group-item waves-effect">
-                  <h3>Virtual Classroom</h3></a>              
-              <a routerLink="/dashboard" class="list-group-item waves-effect active">
-                  <i class="fa fa-pie-chart mr-3"></i>Dashboard</a>              
-              <a class="list-group-item list-group-item-action waves-effect">
-                  <i class="fa fa-table mr-3"></i>Find new courses</a>
-              <a routerLink="/profile" href="#" class="list-group-item list-group-item-action waves-effect">
-                  <i class="fa fa-user mr-3"></i>Profile</a>
-                <a *ngIf="user?.faculty" data-toggle="modal" data-target="#exampleModal">
-                    <button type="button" class="btn btn-success" >New Course</button>
-                </a>
-                <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <a href="#" class="list-group-item waves-effect">
+                <h3>Virtual Classroom</h3></a>              
+            <a routerLink="/dashboard" class="list-group-item waves-effect active">
+                <i class="fa fa-pie-chart mr-3"></i>Dashboard</a>              
+            <a *ngIf="user?.faculty==false" class="list-group-item list-group-item-action waves-effect">
+                <i class="fa fa-table mr-3"></i>Find new courses</a>
+            <a routerLink="/profile" href="#" class="list-group-item list-group-item-action waves-effect">
+                <i class="fa fa-user mr-3"></i>Profile</a>
+            <a *ngIf="user?.faculty" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-success" >New Course</button>
+            </a>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -81,6 +81,7 @@
 
             <!--Card group-->
         <div class="card-deck">
+            <!-- <template [ngIf]="courses"> -->
             <div *ngFor = "let course of courses" class="wow fadeIn">
                 <a routerLink="{{'/course/'+course.code}}">
                 <!--Card-->
@@ -90,7 +91,9 @@
                     <div class="card-body">
 
                         <!--Title-->
-                        <h4 class="card-title">{{course.code}} - {{course.name}}</h4>
+                        <h4 class="card-title">
+                            
+                            {{course.code}} - {{course.name}}</h4>
 
                         <!--Text-->
                         <p class="card-text">Course Description</p>
@@ -104,6 +107,7 @@
                 <!--Card-->
                 </a>
             </div>
+            <!-- </template> -->
             
 
         </div>
