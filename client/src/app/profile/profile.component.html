@@ -14,15 +14,13 @@
             <div class="list-group list-group-flush">
             
                 <a href="#" class="list-group-item waves-effect">
-                    <i class="fa fa-pie-chart mr-3"></i>Virtual Classroom
-                </a>
-                <a routerLink="/dashboard" class="list-group-item waves-effect">
-                    <i class="fa fa-pie-chart mr-3"></i>Dashboard
-                </a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fa fa-user mr-3"></i>Find new courses</a>
-                <a routerLink="/profile" class="list-group-item list-group-item-action waves-effect active">
-                    <i class="fa fa-table mr-3"></i>Profile</a>
+                    <h3>Virtual Classroom</h3></a>              
+                <a routerLink="/dashboard" class="list-group-item waves-effect active">
+                    <i class="fa fa-pie-chart mr-3"></i>Dashboard</a>              
+                <a *ngIf="user?.faculty==false" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-table mr-3"></i>Find new courses</a>
+                <a routerLink="/profile" href="#" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-user mr-3"></i>Profile</a>
             </div>
 
         </div>
@@ -99,24 +97,24 @@
                                                 <tbody>
                                                 <tr>
                                                     <td>Date of Birth: </td>
-                                                    <td><input class="form-control" type="text" placeholder="Date of Birth"></td>
+                                                    <td><input class="form-control" type="text" placeholder="Date of Birth" [(ngModel)]="newProfile.dob"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Gender: </td>
-                                                    <td><input class="form-control" type="text" placeholder="Gender"></td>
+                                                    <td><input class="form-control" type="text" placeholder="Gender" [(ngModel)]="newProfile.gender"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Education: </td>
-                                                    <td><input class="form-control" type="text" placeholder="Education"></td>
+                                                    <td><input class="form-control" type="text" placeholder="Education" [(ngModel)]="newProfile.education"></td>
                                                 </tr>
                                                 
                                                 <tr>
                                                     <td>Phone number:</td>
-                                                    <td><input class="form-control" type="text" placeholder="Phone number"></td>
+                                                    <td><input class="form-control" type="text" placeholder="Phone number" [(ngModel)]="newProfile.phone"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Email: </td>
-                                                    <td><input class="form-control" type="text" placeholder="E-mail address"></td>
+                                                    <td><input class="form-control" type="text" placeholder="E-mail address" [(ngModel)]="newProfile.email"></td>
                                                 </tr>
                                                                                             
                                                 </tbody>
@@ -127,7 +125,7 @@
                                     </div>  
                                     <div class="m-4">  
                                         <button type="button" class="btn btn-primary" (click)="editNow=!editNow"> {{editNow?'Back':'Edit'}}</button>
-                                        <button type="button" *ngIf="editNow" class="btn btn-primary"> Update</button>
+                                        <button type="button" *ngIf="editNow" class="btn btn-primary" (click)="editProfile()"> Update</button>
                                     </div>
                                     </div>
                                 </div>                      
