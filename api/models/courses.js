@@ -23,7 +23,11 @@ var courseSchema = new mongoose.Schema({
     forums:[{
                 sender: mongoose.Schema.Types.ObjectId,
                 msg : String
-            }]
+            }],
+    syllabus:{
+        type: String,
+        required: true
+    }  
 });
     
 mongoose.model('Course', courseSchema,'courses');

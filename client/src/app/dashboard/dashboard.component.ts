@@ -15,7 +15,7 @@ export class DashboardComponent {
     code:"",
     name:"",
     owner:""
-  }
+  };
 
   constructor(private auth: AuthenticationService, private router: Router, private http: HttpClient) {}
   httpOptions = {

@@ -97,24 +97,24 @@
                                                 <tbody>
                                                 <tr>
                                                     <td>Date of Birth: </td>
-                                                    <td><input class="form-control" type="text" placeholder="Date of Birth"></td>
+                                                    <td><input class="form-control" type="text" placeholder="Date of Birth" [(ngModel)]="newProfile.dob"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Gender: </td>
-                                                    <td><input class="form-control" type="text" placeholder="Gender"></td>
+                                                    <td><input class="form-control" type="text" placeholder="Gender" [(ngModel)]="newProfile.gender"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Education: </td>
-                                                    <td><input class="form-control" type="text" placeholder="Education"></td>
+                                                    <td><input class="form-control" type="text" placeholder="Education" [(ngModel)]="newProfile.education"></td>
                                                 </tr>
                                                 
                                                 <tr>
                                                     <td>Phone number:</td>
-                                                    <td><input class="form-control" type="text" placeholder="Phone number"></td>
+                                                    <td><input class="form-control" type="text" placeholder="Phone number" [(ngModel)]="newProfile.phone"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Email: </td>
-                                                    <td><input class="form-control" type="text" placeholder="E-mail address"></td>
+                                                    <td><input class="form-control" type="text" placeholder="E-mail address" [(ngModel)]="newProfile.email"></td>
                                                 </tr>
                                                                                             
                                                 </tbody>
@@ -125,7 +125,7 @@
                                     </div>  
                                     <div class="m-4">  
                                         <button type="button" class="btn btn-primary" (click)="editNow=!editNow"> {{editNow?'Back':'Edit'}}</button>
-                                        <button type="button" *ngIf="editNow" class="btn btn-primary"> Update</button>
+                                        <button type="button" *ngIf="editNow" class="btn btn-primary" (click)="editProfile()"> Update</button>
                                     </div>
                                     </div>
                                 </div>                      

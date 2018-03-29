@@ -19,6 +19,9 @@ router.get('/profile', auth, ctrlProfile.profileRead);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
+//edit profile
+router.post('/editProfile',ctrlProfile.editProfile);
+
 //new course
 router.post('/newCourse',ctrlCourse.newCourse);
 
