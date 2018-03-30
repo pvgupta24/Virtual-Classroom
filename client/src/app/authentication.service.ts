@@ -12,6 +12,11 @@ export interface UserDetails {
   courses: [string]
   exp: number;
   iat: number;
+  dob: Date;
+  gender: string;
+  phone: string;
+  education: string;
+
 }
 
 interface TokenResponse {
