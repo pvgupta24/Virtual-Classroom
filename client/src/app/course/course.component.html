@@ -63,7 +63,7 @@
 
                 <!--Card content-->
                 <div class="card-body d-sm-flex justify-content-between">
-                    <h4 class="mb-2 mb-sm-0 pt-1"> Syllabus</h4>
+                    <h4 class="mb-2 mb-sm-0 pt-1"> Course Materials</h4>
                 </div>
 
             </div>
@@ -74,12 +74,21 @@
                     <div *ngIf="editNow">
                         <form class="m-4">
                             <div class="form-group">
+                                    <label for="comment">Syllabus</label>
                                 <textarea class="form-control" rows="5" id="message" [(ngModel)]="courseSyllabus"></textarea>
                             </div>
                         </form>
                     </div>
                     <div *ngIf="!editNow">
-                        <p>Hello</p>
+                            <h4 class="mb-3 mb-sm-2 pt-1"> Syllabus</h4>
+                        <div class="p-2">    
+                            <ul>
+                            <li>Greedy Algorithm</li>
+                            <li>Dynamic Programming</li>
+                            <li>Bit Manipulation</li>
+                            <li>Number Theory</li>
+                            </ul>
+                        </div>
                     </div>   
                     <div>
                         <button *ngIf="user?.faculty" type="button" class="btn btn-primary" (click)="editNow=!editNow">Update</button>
