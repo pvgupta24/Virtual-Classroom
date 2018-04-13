@@ -1,119 +1,120 @@
 <!-- Full Page Intro -->
 <div class="view full-page-intro" style="background-image: url('https://images.pexels.com/photos/745365/pexels-photo-745365.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb'); background-repeat: no-repeat; background-size: cover;">
 
-<div class="my-view container" >
+  <div class="my-view container">
     <!--Main Navigation-->
     <header>
-    <!-- 
+      <!-- 
       <div class"container my-view">
   
       </div> -->
-      
-      <!-- Sidebar -->
-      <div class="side-nav sidebar-fixed position-fixed">      
-  
-          <div class="list-group list-group-flush">
-            
-            <a href="#" class="list-group-item waves-effect">
-                <h3>Virtual Classroom</h3></a>              
-            <a routerLink="/dashboard" class="list-group-item waves-effect active">
-                <i class="fa fa-pie-chart mr-3"></i>Dashboard</a>              
-            <a *ngIf="user?.faculty==false" class="list-group-item list-group-item-action waves-effect">
-                <i class="fa fa-table mr-3"></i>Find new courses</a>
-            <a routerLink="/profile" href="#" class="list-group-item list-group-item-action waves-effect">
-                <i class="fa fa-user mr-3"></i>Profile</a>
-            <a *ngIf="user?.faculty" data-toggle="modal" data-target="#exampleModal">
-                <button type="button" class="btn btn-success" >New Course</button>
-            </a>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Add new course</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="md-form mb-5">
-                                <i class="fa fa-user prefix grey-text"></i>
-                                <input type="text" id="form34" class="form-control" [(ngModel)]="newcourse.code">
-                                <label data-error="wrong" data-success="right" for="form34">Course Code</label>
-                            </div>
-                            <div class="md-form mb-5">
-                                <i class="fa fa-user prefix grey-text"></i>
-                                <input type="text" id="form34" class="form-control" [(ngModel)]="newcourse.name">
-                                <label data-error="wrong" data-success="right" for="form34">Course Name</label>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
 
-                            <button class="btn btn-unique" (click)="newCourse()">Add course 
-                                <i class="fa fa-paper-plane-o ml-1"></i></button>
-                        </div>
-                    </div>
+      <!-- Sidebar -->
+      <div class="side-nav sidebar-fixed position-fixed">
+
+        <div class="list-group list-group-flush">
+
+          <a href="#" class="list-group-item waves-effect">
+            <h3>Virtual Classroom</h3>
+          </a>
+          <a routerLink="/dashboard" class="list-group-item waves-effect active">
+            <i class="fa fa-pie-chart mr-3"></i>Dashboard</a>
+          <a *ngIf="user?.faculty==false" class="list-group-item list-group-item-action waves-effect">
+            <i class="fa fa-table mr-3"></i>Find new courses</a>
+          <a routerLink="/profile" href="#" class="list-group-item list-group-item-action waves-effect">
+            <i class="fa fa-user mr-3"></i>Profile</a>
+          <a *ngIf="user?.faculty" data-toggle="modal" data-target="#exampleModal" class="list-group-item list-group-item-action waves-effect">
+            <i class="fa fa-plus mr-3"></i>New Course </a>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add new course</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
+                <div class="modal-body">
+                  <div class="md-form mb-5">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <input type="text" id="form34" class="form-control" [(ngModel)]="newcourse.code">
+                    <label data-error="wrong" data-success="right" for="form34">Course Code</label>
+                  </div>
+                  <div class="md-form mb-5">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <input type="text" id="form34" class="form-control" [(ngModel)]="newcourse.name">
+                    <label data-error="wrong" data-success="right" for="form34">Course Name</label>
+                  </div>
+                </div>
+                <div class="modal-footer">
+
+                  <button class="btn btn-unique" (click)="newCourse()">Add course
+                    <i class="fa fa-paper-plane-o ml-1"></i>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-  
+        </div>
+
       </div>
       <!-- Sidebar -->
-  
+
     </header>
     <!--Main Navigation-->
-  
-<!--Main layout-->
-    <main class="mx-lg-5">
-        <div class="container-fluid mt-5">
 
-            <!-- Heading -->
-            <div class="card mb-4 wow fadeIn">
+    <!--Main layout-->
+    <main class="mx-lg-5">
+      <div class="container-fluid mt-5">
+
+        <!-- Heading -->
+        <div class="card mb-4 wow fadeIn">
+
+          <!--Card content-->
+          <div class="card-body d-sm-flex justify-content-between">
+            <h4 class="mb-2 mb-sm-0 pt-1">{{ user?.name | titlecase }}'s Dashboard</h4>
+          </div>
+
+        </div>
+        <!-- Heading -->
+
+
+        <!--Card group-->
+        <div class="card-deck">
+          <!-- <template [ngIf]="courses"> -->
+          <div *ngFor="let course of courses" class="wow fadeIn">
+            <a routerLink="{{'/course/'+course.code}}">
+              <!--Card-->
+              <div class="card mb-4">
 
                 <!--Card content-->
-                <div class="card-body d-sm-flex justify-content-between">
-                    <h4 class="mb-2 mb-sm-0 pt-1">{{ user?.name | titlecase }}'s Dashboard</h4>
+                <div class="card-body">
+
+                  <!--Title-->
+                  <h4 class="card-title">
+
+                    {{course.code}} - {{course.name}}</h4>
+
+                  <!--Text-->
+                  <!-- <p class="card-text">Course Description</p> -->
+
+                  <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                  <button type="button" class="btn btn-blue btn-md">Go to Course Page</button>
                 </div>
+                <!--Card content-->
 
-            </div>
-            <!-- Heading -->
+              </div>
+              <!--Card-->
+            </a>
+          </div>
+          <!-- </template> -->
 
-
-            <!--Card group-->
-        <div class="card-deck">
-            <!-- <template [ngIf]="courses"> -->
-            <div *ngFor = "let course of courses" class="wow fadeIn">
-                <a routerLink="{{'/course/'+course.code}}">
-                <!--Card-->
-                <div class="card mb-4" >                    
-
-                    <!--Card content-->
-                    <div class="card-body">
-
-                        <!--Title-->
-                        <h4 class="card-title">
-                            
-                            {{course.code}} - {{course.name}}</h4>
-
-                        <!--Text-->
-                        <p class="card-text">Course Description</p>
-
-                        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                        <button type="button" class="btn btn-light-blue btn-md">Go to Course Page</button>
-                    </div>
-                    <!--Card content-->
-
-                </div>
-                <!--Card-->
-                </a>
-            </div>
-            <!-- </template> -->
-            
 
         </div>
         <!--Card group-->
 
-        </div>
+      </div>
     </main>
     <!--Main layout-->
 

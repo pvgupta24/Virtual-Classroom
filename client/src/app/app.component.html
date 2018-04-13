@@ -28,15 +28,15 @@
 
       <!-- Right -->
       <ul class="navbar-nav nav-flex-icons"> <li class="nav-item">
-          <a class="nav-link" href="#">Home
+          <a class="nav-link" href="#"><i class="fa fa-home"></i>Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
-          <li *ngIf="!auth.isLoggedIn()" class="nav-item"><a class="nav-link" routerLink="/login">Sign in</a></li>
+          <li *ngIf="!auth.isLoggedIn()" class="nav-item"><a class="nav-link" routerLink="/login"><i class="fa fa-sign-in"></i>Sign in</a></li>
           <li *ngIf="!auth.isLoggedIn()" class="nav-item"><a class="nav-link" routerLink="/register">Register</a></li>  
-          <li *ngIf="auth.isLoggedIn()" class="nav-item"><a class="nav-link" routerLink="/profile">{{ auth.getUserDetails()?.name }}</a></li>
-          <li *ngIf="auth.isLoggedIn()" class="nav-item"><a class="nav-link" routerLink="/dashboard">Dashboard</a></li>
-          <li *ngIf="auth.isLoggedIn()" class="nav-item"><a class="nav-link" (click)="auth.logout()">Logout</a></li>
+          <li *ngIf="auth.isLoggedIn()" class="nav-item"><a class="nav-link" routerLink="/profile">{{ auth.getUserDetails()?.name | titlecase}}</a></li>
+          <li *ngIf="auth.isLoggedIn()" class="nav-item"><a class="nav-link" routerLink="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+          <li *ngIf="auth.isLoggedIn()" class="nav-item"><a class="nav-link" (click)="auth.logout()"><i class="fa fa-sign-out"></i>Logout</a></li>
        
         <li class="nav-item">
           <a href="https://github.com/pvgupta24/Virtual-Classroom" class="nav-link" target="_blank">
@@ -49,23 +49,6 @@
   </div>
 </nav>
 <!-- Navbar -->
-
-<!-- <div class="navbar navbar-default">
-  <div class="container">
-    <div id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li><a routerLink="{{auth.isLoggedIn() ? '/dashboard' : '/'}}">{{title}}</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Sign in</a></li>
-        <li *ngIf="!auth.isLoggedIn()"><a routerLink="/register">Register</a></li>  
-        <li *ngIf="auth.isLoggedIn()"><a routerLink="/profile">{{ auth.getUserDetails()?.name }}</a></li>
-        <li *ngIf="auth.isLoggedIn()"><a routerLink="/dashboard">Dashboard</a></li>
-        <li *ngIf="auth.isLoggedIn()"><a (click)="auth.logout()">Logout</a></li>
-      </ul>
-    </div>
-  </div>
-</div> -->
 
 <router-outlet></router-outlet>
 <script type="text/javascript">

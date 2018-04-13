@@ -27,6 +27,7 @@ router.post('/newCourse',ctrlCourse.newCourse);
 
 //retrieve user's courses
 router.get('/courseDetails/:course',ctrlCourse.courseDetails)
+router.post('/addSyllabus',ctrlCourse.addSyllabus)
 
 //Forgot Password
 router.post('/forgotPassword', ctrlAuth.forgotPassword);

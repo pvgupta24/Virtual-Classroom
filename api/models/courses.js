@@ -25,8 +25,8 @@ var courseSchema = new mongoose.Schema({
                 msg : String
             }],
     syllabus:{
-        type: String,
-        required: true
+        type: [String],
+        // required: true
     }  
 });
     
