@@ -3,6 +3,8 @@
 ## Description
 This is a web application which provides a platform for students to access educational resources from anywhere. This application also allows faculty to create new courses, conduct live lectures, interact with students in discussion forums and create course materials. Students get access to these live lectures, discussion forums and course materials.
 
+- All associated documentation can be found [here](https://drive.google.com/drive/folders/1HZ6Zh-cSdluLqlHWCUeUqqI8nQdRhZO5?usp=sharing)
+
 ## Dependencies
 * MongoDB
 * NodeJS
