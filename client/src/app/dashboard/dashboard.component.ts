@@ -17,6 +17,8 @@ export class DashboardComponent {
     name:"",
     owner:""
   };
+  find = false;
+  list:Object = [];
 
   constructor(private auth: AuthenticationService, private router: Router, private http: HttpClient) {}
   httpOptions = {
@@ -51,6 +53,16 @@ export class DashboardComponent {
      "owner":this.newcourse.owner}), this.httpOptions)
     .subscribe(res => console.log(res));
     // this.router.navigateByUrl('/newCourse');
+  }
+
+  allCourses(){
+    console.log("Getting All Courses");
+    this.http.get('/api/allCourses/' ,this.httpOptions)
+      .subscribe(res => {
+        console.log(res);
+        this.list = res;
+        this.find = true;
+      });
   }
 
 }

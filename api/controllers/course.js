@@ -93,3 +93,16 @@ module.exports.addSyllabus = function (req, res) {
     res.status(200).json(data);
   });
 }
+
+
+module.exports.allCourses = function (req, res) {
+  console.log("Sending Courses");
+  Course.find({}, function (err, courses) {
+    if (err) {
+      console.log(err)
+      res.status(404).json(err);
+    }
+    console.log("Sending course " + courses);
+    res.status(200).json(courses);
+  });
+}
