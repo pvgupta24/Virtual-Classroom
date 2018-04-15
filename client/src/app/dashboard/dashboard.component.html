@@ -25,6 +25,7 @@
             <i class="fa fa-user mr-3"></i>Profile</a>
           <a *ngIf="user?.faculty" data-toggle="modal" data-target="#exampleModal" class="list-group-item list-group-item-action waves-effect">
             <i class="fa fa-plus mr-3"></i>New Course </a>
+
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -117,37 +118,37 @@
 
 
         <div *ngIf="find" class="card-deck">
-            <!-- <template [ngIf]="courses"> -->
-            <div *ngFor="let course of list" class="wow fadeIn">
-              <a routerLink="{{'/course/'+course.code}}">
-                <!--Card-->
-                <div class="card mb-4">
-  
-                  <!--Card content-->
-                  <div class="card-body">
-  
-                    <!--Title-->
-                    <h4 class="card-title">
-  
-                      {{course.code}} - {{course.name}}</h4>
-  
-                    <!--Text-->
-                    <!-- <p class="card-text">Course Description</p> -->
-  
-                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                    <button type="button" class="btn btn-blue btn-md">Go to Course Page</button>
-                  </div>
-                  <!--Card content-->
-  
+          <!-- <template [ngIf]="courses"> -->
+          <div *ngFor="let course of list" class="wow fadeIn">
+            <a routerLink="{{'/course/'+course.code}}">
+              <!--Card-->
+              <div class="card mb-4">
+
+                <!--Card content-->
+                <div class="card-body">
+
+                  <!--Title-->
+                  <h4 class="card-title">
+
+                    {{course.code}} - {{course.name}}</h4>
+
+                  <!--Text-->
+                  <!-- <p class="card-text">Course Description</p> -->
+
+                  <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                  <button type="button" class="btn btn-blue btn-md">Go to Course Page</button>
                 </div>
-                <!--Card-->
-              </a>
-            </div>
-            <!-- </template> -->
-  
-  
+                <!--Card content-->
+
+              </div>
+              <!--Card-->
+            </a>
           </div>
-          <!--Card group-->
+          <!-- </template> -->
+
+
+        </div>
+        <!--Card group-->
 
       </div>
     </main>

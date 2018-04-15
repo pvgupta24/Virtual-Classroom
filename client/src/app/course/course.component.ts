@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { AuthenticationService, UserDetails } from '../authentication.service';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 //let jitsi = require('https://meet.jit.si/external_api.js');
 declare function JitsiMeetExternalAPI(a, b): void;
